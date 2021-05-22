@@ -19,8 +19,8 @@
                 </div>
             </div>
         </div> 
-        <div class="col-ms-12">
-            <table style="width:100%">
+        <div class="col-ms-12" style='text-align: center;'>
+            <table style="width: 100%; text-align: center;" id="contenidoajax">
               <caption>Monthly savings</caption>
               <tr>
                 <th>Id</th>
@@ -33,10 +33,14 @@
                 <td>{{ $rou->id }}</td>
                 <td><a href="/usuario/{{ $rou->id }}">{{ $rou->name }}</a></td>
                 <td>{{ $rou->status == 1 ? 'Activo' : 'Inactivo'}}</td>
-                <td width="45" height="45"><img src="{{ $rou->image ? '/images/'.$rou->image :  '/images/Avatar.jpg'}}"> </td> 
+                <td><img src="{{ $rou->image ? '/images/'.$rou->image :  '/images/Avatar.jpg'}}"> </td> 
             </tr>
-              @endforeach 
+              @endforeach
+              <span ></span> 
             </table>
+        </div>
+        <div>
+            <button id="siguiente" value="2">siguiente</button>
         </div>
     </div>
 </div>

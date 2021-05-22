@@ -20,4 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/usuario/{id}', 'HomeController@editarusuario');
 Route::post('/usuario/post/{id}', 'HomeController@editarusuariopost');
+Route::get('/usuario/indexajax', 'HomeController@indexajax');
+Route::get('/home/nextpage', 'HomeController@nextpage');
 

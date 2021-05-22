@@ -19,7 +19,9 @@ table, th, td {
 }
 th, td {
   padding: 5px;
-  text-align: left;
+}
+tr img{
+width: 150px;
 }
 </style>
 </head>
@@ -85,6 +87,31 @@ th, td {
     </div>
 
     <!-- Scripts -->
+    <!-- <script  src="https://code.jquery.com/jquery-2.2.3.min.js"></script> -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript">
+    $("#siguiente").on("click", function(){
+            $.ajax({
+                url: "/home/nextpage",
+                type: "GET",
+                data: ({page: $("#siguiente").val(),}),
+                dataType: "json",
+                beforeSend: function(){
+                  //
+                },
+                success: function(result){
+                  console.log(result);
+                  //$("#contenidoajax").push(result['body']);
+                  $("#contenidoajax").append(result['body']);
+                  console.log(result['body']);
+                  var page = $("#siguiente").val();
+                  page++;
+                  //console.log(page++);
+                  $("#siguiente").val(page);
+                  
+                }
+            });
+        });
+</script>
 </body>
 </html>
